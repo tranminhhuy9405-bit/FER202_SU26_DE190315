@@ -1,7 +1,7 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
-function AppNavbar() {
+function AppNavbar({ onLogout }) {
   return (
     <Navbar bg="primary" variant="dark" expand="md" sticky="top">
       <Container>
@@ -12,6 +12,7 @@ function AppNavbar() {
             <Nav.Link as={NavLink} to='/' end>🏠 Trang chủ</Nav.Link>
             <Nav.Link as={NavLink} to='/posts'>📚 Bài viết</Nav.Link>
             <Nav.Link as={NavLink} to='/about'>ℹ️ Giới thiệu</Nav.Link>
+            <Nav.Link onClick={onLogout} style={{ cursor: 'pointer' }}>🚪 Đăng xuất</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
